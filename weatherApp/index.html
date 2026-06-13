@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather APP - Glass Theme</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="main-section">
+      <header
+        class="d-flex align-items-center justify-content-between w-100 px-4 py-3"
+      >
+        <div class="input-group w-25 m-3">
+          <input
+            type="text"
+            class="form-control glass-input"
+            id="town-input"
+            placeholder="Enter Town Name..."
+          />
+          <button
+            type="button"
+            class="btn btn-light fw-bold px-4"
+            id="search-town-btn"
+          >
+            Search
+          </button>
+        </div>
+
+        <nav class="d-flex gap-4 align-items-center forecast-nav fw-bold">
+          <a href="#" class="active" id="tab-today">Today</a>
+          <a href="#" id="tab-5days">5-day forecast</a>
+        </nav>
+      </header>
+
+      <main class="container mt-3 mb-5" style="max-width: 850px">
+        <section class="glass-panel rounded-4 p-4 p-md-5" id="current-weather">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-7 text-center text-md-start">
+              <h1 class="fw-bold m-0 display-4" id="current-city">Vynnyky</h1>
+              <span class="text-white-50 fs-5" id="current-date"
+                >12.06.2026</span
+              >
+              <br />
+
+              <div
+                class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 my-3"
+              >
+                <img
+                  id="current-icon"
+                  src="https://openweathermap.org/img/wn/01d@4x.png"
+                  alt="Sunny"
+                  width="100"
+                />
+                <div class="display-1 fw-bold" id="current-temp">29°C</div>
+              </div>
+
+              <p class="fs-4 fw-medium m-0" id="current-desc">Sunny</p>
+              <p class="text-white-50 fs-5 m-0">
+                Real Feel: <span id="current-feels-like">30°C</span>
+              </p>
+            </div>
+
+            <div class="col-12 col-md-5 text-center text-md-end mt-4 mt-md-0">
+              <div class="mb-3">
+                <span class="text-white-50 me-2 fs-5">Sunrise:</span>
+                <span class="fw-bold fs-5 text-dark" id="current-sunrise"
+                  >05:22 AM</span
+                >
+              </div>
+              <div class="mb-3">
+                <span class="text-white-50 me-2 fs-5">Sunset:</span>
+                <span class="fw-bold fs-5 text-dark" id="current-sunset"
+                  >09:38 PM</span
+                >
+              </div>
+              <div class="mb-0">
+                <span class="text-white-50 me-2 fs-5">Duration:</span>
+                <span class="fw-bold fs-5 text-dark" id="current-duration"
+                  >16:16 hr</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="glass-panel rounded-4 p-4 mt-4">
+          <h5 class="text-white-50 fw-bold mb-4 tracking-wide">FORECAST</h5>
+
+          <div
+            class="d-flex text-center overflow-x-auto gap-3 pb-3 custom-scrollbar"
+            id="hourly-forecast-container"
+          >
+            <div
+              class="d-flex flex-column text-start me-3 justify-content-between text-white-50 small fw-bold"
+              style="min-width: 90px; padding-top: 5px"
+            >
+              <span class="mb-3 text-dark">TODAY</span>
+              <span class="mb-3 mt-4 pt-2">Forecast</span>
+              <span class="mb-3">Temp (°C)</span>
+              <span class="mb-3">RealFeel</span>
+              <span>Wind (km/h)</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">7pm</span>
+              <img
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                alt="Sunny"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Sunny</span>
+              <span class="mb-3 fw-bold fs-5">29°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">29°</span>
+              <span class="text-white-50 small">11 ESE</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">8pm</span>
+              <img
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                alt="Sunny"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Sunny</span>
+              <span class="mb-3 fw-bold fs-5">28°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">27°</span>
+              <span class="text-white-50 small">9 ESE</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">9pm</span>
+              <img
+                src="https://openweathermap.org/img/wn/02n@2x.png"
+                alt="Cloudy"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Cloudy</span>
+              <span class="mb-3 fw-bold fs-5">27°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">26°</span>
+              <span class="text-white-50 small">6 ESE</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">10pm</span>
+              <img
+                src="https://openweathermap.org/img/wn/02n@2x.png"
+                alt="Cloudy"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Cloudy</span>
+              <span class="mb-3 fw-bold fs-5">27°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">27°</span>
+              <span class="text-white-50 small">6 ESE</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">11pm</span>
+              <img
+                src="https://openweathermap.org/img/wn/03n@2x.png"
+                alt="Cloudy"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Cloudy</span>
+              <span class="mb-3 fw-bold fs-5">26°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">26°</span>
+              <span class="text-white-50 small">6 ESE</span>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-between glass-panel-inner p-3 hourly-col"
+              style="min-width: 100px"
+            >
+              <span class="mb-2 fw-medium">12am</span>
+              <img
+                src="https://openweathermap.org/img/wn/04n@2x.png"
+                alt="Clouds"
+                width="45"
+                class="mb-2"
+              />
+              <span class="mb-3 small text-white-50">Clouds</span>
+              <span class="mb-3 fw-bold fs-5">25°</span>
+              <span class="mb-3 fw-bold fs-5 text-white-50">25°</span>
+              <span class="text-white-50 small">7 SE</span>
+            </div>
+          </div>
+
+          <div id="five-days-container" class="d-none"></div>
+        </section>
+
+        <section class="glass-panel rounded-4 p-4 mt-4 mb-5">
+          <h5 class="text-white-50 fw-bold mb-4 tracking-wide">
+            NEARBY PLACES
+          </h5>
+
+          <div class="row g-4" id="nearby-places-container">
+            <div class="col-12 col-md-6">
+              <div
+                class="d-flex justify-content-between align-items-center glass-panel-inner p-3"
+              >
+                <span class="fw-medium fs-5">Lviv</span>
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    width="40"
+                    alt="Sunny"
+                  />
+                  <span class="fw-bold fs-4">28°C</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="d-flex justify-content-between align-items-center glass-panel-inner p-3"
+              >
+                <span class="fw-medium fs-5">Kyiv</span>
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    src="https://openweathermap.org/img/wn/02d@2x.png"
+                    width="40"
+                    alt="Cloudy"
+                  />
+                  <span class="fw-bold fs-4">24°C</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="d-flex justify-content-between align-items-center glass-panel-inner p-3"
+              >
+                <span class="fw-medium fs-5">Odesa</span>
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    width="40"
+                    alt="Sunny"
+                  />
+                  <span class="fw-bold fs-4">26°C</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="d-flex justify-content-between align-items-center glass-panel-inner p-3"
+              >
+                <span class="fw-medium fs-5">Kryvyi Rih</span>
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    src="https://openweathermap.org/img/wn/03d@2x.png"
+                    width="40"
+                    alt="Clouds"
+                  />
+                  <span class="fw-bold fs-4">27°C</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="JS/controller.js"></script>
+  </body>
+</html>

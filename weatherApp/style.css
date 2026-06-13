@@ -1,0 +1,131 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  color: #ffffff;
+}
+
+.main-section {
+  background-image:
+    linear-gradient(rgba(10, 15, 30, 0.4), rgba(10, 15, 30, 0.8)),
+    url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-panel-inner {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  transition: background 0.3s ease;
+}
+
+.glass-panel-inner:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Кнопка пошуку (блакитний акцент) */
+#search-town-btn {
+  color: #0d6efd !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+#search-town-btn:hover {
+  background-color: #e2e6ea !important;
+  border-color: #e2e6ea !important;
+}
+
+/* =========================================
+   ТИПОГРАФІКА ТА НАВІГАЦІЯ
+========================================= */
+
+.text-dark {
+  color: #212529 !important;
+}
+
+.tracking-wide {
+  letter-spacing: 2px;
+}
+
+/* Навігація в шапці */
+.forecast-nav a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.forecast-nav a:hover,
+.forecast-nav a.active {
+  color: #ffffff;
+}
+
+/* Лінія під активною вкладкою */
+.forecast-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* =========================================
+   КАСТОМНИЙ СКРОЛБАР
+========================================= */
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
